@@ -2,21 +2,21 @@ package simeon;
 
 public class Opashna2 {
 	
-	public static int result;
 
 	public static void main(String[] args) {
 	   	 System.out.println("Sum is " + xMethod(5));
 	}
 	
-	public static int xMethod(int n){
 	
-		if (n==0) return result;
-		
+	public static int xMethod(int n){
+		return xMethod(n, 0);
+	}
+	
+	public static int xMethod(int n, int sum){
+		if (n==0) return sum;
 		else{
-			result += n;
-			return xMethod(n-1);
+			return xMethod(n-1, sum+n);
 		}
-		
 	}
 //	public static int xMethod(int n) {
 //	   	 if (n == 1)
